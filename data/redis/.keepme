@@ -1,2 +1,0 @@
-# This file ensures the redis data directory is preserved in git
-# The directory itself will contain database files that should not be committed
