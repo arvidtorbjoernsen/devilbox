@@ -19,6 +19,16 @@
 
 # Ignore Data dirs
 /data/www/*
+/data/mysql/*
+/data/postgres/*
+/data/redis/*
+/data/mongo/*
+/data/mail/*
+!/data/mysql/.keepme
+!/data/postgres/.keepme
+!/data/redis/.keepme
+!/data/mongo/.keepme
+!/data/mail/.keepme
 
 # Ignore Certificate Authority
 /ca/*
