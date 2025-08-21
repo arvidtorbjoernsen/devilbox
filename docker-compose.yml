@@ -434,6 +434,7 @@ services:
       # HOST-DIRECTORY : DOCKER-DIRECTORY
 
       # Mount Redis Data directory
+            # Mount Redis Data directory
       - ${HOST_PATH_DATABASE_DATADIR:-./data}/redis:/data:rw${MOUNT_OPTIONS}
 
     depends_on:
