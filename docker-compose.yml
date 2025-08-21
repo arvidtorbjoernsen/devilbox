@@ -34,7 +34,7 @@ services:
   # Bind (DNS Server)
   # ------------------------------------------------------------
   bind:
-    image: cytopia/bind:alpine-0.35
+    image: cytopia/bind:stable-manifest-linux-arm64
     hostname: bind
     restart: always
     ports:
@@ -100,7 +100,7 @@ services:
   # PHP
   # ------------------------------------------------------------
   php:
-    image: devilbox/php-fpm:${PHP_SERVER}-work-0.150
+    image: devilbox/php-fpm:${PHP_SERVER}-work
     hostname: php
 
     ##
@@ -379,6 +379,7 @@ services:
   # ------------------------------------------------------------
   pgsql:
     image: postgres:${PGSQL_SERVER}
+    platform: linux/arm64
     hostname: pgsql
 
     environment:

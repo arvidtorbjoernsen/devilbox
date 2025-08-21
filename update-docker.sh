@@ -86,5 +86,10 @@ if [ "${WHICH}" = "all" ] || [ "${WHICH}" = "rest" ]; then
 	if [ ! -f "${CWD}/.env" ]; then
 		cp "${CWD}/env-example" "${CWD}/.env"
 	fi
-	docker-compose --project-directory "${CWD}" --file "${CWD}/docker-compose.yml" pull
+	# Support both docker-compose (v1) and docker compose (v2)
+	if command -v docker-compose >/dev/null 2>&1; then
+		docker-compose --project-directory "${CWD}" --file "${CWD}/docker-compose.yml" pull
+	else
+		docker compose --project-directory "${CWD}" --file "${CWD}/docker-compose.yml" pull
+	fi
 fi
